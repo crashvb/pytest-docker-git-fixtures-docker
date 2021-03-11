@@ -10,6 +10,12 @@ Bare repositories can be provisioned under `/srv/git` using `create-repo`, and c
 
 ## Entrypoint Scripts
 
+### init-repos
+
+The embedded entrypoint script is located at `/etc/entrypoint.d/init-repos` and performs the following actions:
+
+1. The `/bin/create-repo` command is invoked for all repos contained in `PDGF_CREATE_REPOS`.
+2. The `/bin/mirror-repo` command is invoked for all repos contained in `PDGF_MIRROR_REPOS`.
 None.
 
 ## Standard Configuration
@@ -20,7 +26,8 @@ None.
 /
 ├─ bin/
 │  ├─ allow-user
-│  └─ create-repo
+│  ├─ create-repo
+│  └─ mirror-repo
 ├─ etc/
 │  └─ apache2/
 │     └─ vhosts.d/
