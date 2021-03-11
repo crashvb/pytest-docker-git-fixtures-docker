@@ -9,7 +9,7 @@ RUN APT_ALL_REPOS=1 docker-apt git ssl-cert && \
 
 # Configure: httpd
 ADD apache.git /etc/apache2/vhost.d/git
-RUN a2enmod rewrite && \
+RUN a2enmod rewrite ssl && \
 	a2ensite default-ssl && \
 	echo "pytest-docker-git-fixtures-docker" > /var/www/html/index.html
 
