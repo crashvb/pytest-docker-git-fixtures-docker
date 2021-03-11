@@ -1,0 +1,22 @@
+PassEnv GIT_PROJECT_ROOT
+# TODO: Look into replacing with magic file "git-daemon-export-ok"
+SetEnv GIT_HTTP_EXPORT_ALL
+ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
+ 
+RewriteCond %{QUERY_STRING} service=git-receive-pack [OR]
+RewriteCond %{REQUEST_URI} /git-receive-pack$
+RewriteRule ^/git/ - [E=AUTHREQUIRED:yes]
+ 
+<Directory "/usr/lib/git-core">
+	Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+	AllowOverride none
+	Require all granted
+</Directory>
+ 
+<Files "git-http-backend">
+	AuthType Basic
+	AuthName "pytest-docker-git-fixtures"
+	AuthUserFile ${GIT_PROJECT_ROOT}/.htpasswd
+	Require expr !(%{QUERY_STRING} -strmatch '*service=git-receive-pack*' || %{REQUEST_URI} =~ m#/git-receive-pack$#)
+	Require valid-user
+</Files>
