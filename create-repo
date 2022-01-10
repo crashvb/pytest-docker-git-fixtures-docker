@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+if [[ -z "${1}" ]] ; then
+	echo "usage: $0 <name>" >&2
+	exit 1
+fi
+
+name="${1}"
+[[ "${name}" == *.git ]] || name+=.git
+export git_dir="${GIT_PROJECT_ROOT}/${name}"
+git init --bare "${git_dir}"
+chown --recursive www-data:www-data "${git_dir}"
+

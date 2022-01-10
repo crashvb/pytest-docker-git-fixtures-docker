@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+# Configure: create-repos
+if [[ ! -e "$EP_RUN" ]] ; then
+	log "Configuring $(basename $0) for first run ..."
+
+	log "Creating bare GIT repositories ..."
+	for name in $(echo "${PDGF_CREATE_REPOS}" | sed --expression="s/,/ /g"); do
+		create-repo "${name}"
+	done
+
+	log "Mirroring GIT repositories ..."
+	for uri in $(echo "${PDGF_MIRROR_REPOS}" | sed --expression="s/,/ /g"); do
+		mirror-repo "${uri}"
+	done
+fi
+
