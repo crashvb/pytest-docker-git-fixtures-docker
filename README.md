@@ -1,5 +1,10 @@
 # pytest-docker-git-fixtures-docker
 
+[![version)](https://img.shields.io/docker/v/crashvb/pytest-docker-git-fixtures-docker/latest)](https://hub.docker.com/repository/docker/crashvb/pytest-docker-git-fixtures-docker)
+[![image size](https://img.shields.io/docker/image-size/crashvb/pytest-docker-git-fixtures-docker/latest)](https://hub.docker.com/repository/docker/crashvb/pytest-docker-git-fixtures-docker)
+[![linting](https://img.shields.io/badge/linting-hadolint-yellow)](https://github.com/hadolint/hadolint)
+[![license](https://img.shields.io/github/license/crashvb/pytest-docker-git-fixtures-docker.svg)](https://github.com/crashvb/pytest-docker-git-fixtures-docker/blob/master/LICENSE.md)
+
 ## Overview
 
 This docker image is a minimalistic apache2+git setup for testing with [pytest-docker-git-fixtures](https://github.com/crashvb/pytest-docker-git-fixtures).
