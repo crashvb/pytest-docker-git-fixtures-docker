@@ -1,6 +1,0 @@
-#!/usr/bin/make -f
-
-runargs=--env=PDGF_CREATE_REPOS="test-repo-1,test-repo-2" \
-	--env=PDGF_MIRROR_REPOS="https://github.com/crashvb/scratch-docker.git,https://github.com/crashvb/shim-bind.git" \
-	--publish-all
-
