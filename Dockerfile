@@ -1,10 +1,10 @@
-FROM crashvb/httpd:202302180308@sha256:59217299c57e1ade8c79f54ebe60836435458c950b57a2d08f4d6dd4f7191a1c
+FROM crashvb/httpd:202303032354@sha256:5c0858ba4455c9509e27b98fe6047e4d67b490e867844a503a795470612a9837
 ARG org_opencontainers_image_created=undefined
 ARG org_opencontainers_image_revision=undefined
 LABEL \
 	org.opencontainers.image.authors="Richard Davis <crashvb@gmail.com>" \
-	org.opencontainers.image.base.digest="sha256:59217299c57e1ade8c79f54ebe60836435458c950b57a2d08f4d6dd4f7191a1c" \
-	org.opencontainers.image.base.name="crashvb/httpd:202302180308" \
+	org.opencontainers.image.base.digest="sha256:5c0858ba4455c9509e27b98fe6047e4d67b490e867844a503a795470612a9837" \
+	org.opencontainers.image.base.name="crashvb/httpd:202303032354" \
 	org.opencontainers.image.created="${org_opencontainers_image_created}" \
 	org.opencontainers.image.description="Image containing clamav." \
 	org.opencontainers.image.licenses="Apache-2.0" \
